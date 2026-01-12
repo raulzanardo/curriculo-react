@@ -6,37 +6,14 @@ A modern, responsive web application showcasing my professional portfolio and re
 
 ---
 
-## Deployment
-
-This project is configured for automatic deployment to GitHub Pages.
-
-### Setup GitHub Pages
-
-1. Go to your repository settings
-2. Navigate to "Pages" in the left sidebar
-3. Under "Source", select "GitHub Actions"
-4. The workflow will automatically deploy your site when you push to the `main` branch
-
-### Manual Deployment
-
-If you need to deploy manually:
-
-```bash
-# Build the project
-npm run build
-
-# The built files will be in the build/client directory
-# These are automatically deployed by the GitHub Actions workflow
-```
-
----
-
 ## Table of Contents
 
 - [English Version](#english-version)
   - [About](#about)
   - [Features](#features)
   - [Technologies](#technologies)
+  - [Getting Started](#getting-started)
+  - [Deployment](#deployment)
   - [License](#license)
 - [Versão em Português](#versão-em-português)
 
@@ -75,6 +52,66 @@ Platform Support:
 
 - Web (Chrome, Safari, Firefox, Edge)
 
+### Getting Started
+
+#### Prerequisites
+
+- Node.js 20 or higher
+- npm or yarn
+
+#### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/raulzanardo/curriculo-react.git
+cd curriculo-react
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Start the development server:
+
+```bash
+npm run dev
+```
+
+4. Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+#### Build for Production
+
+```bash
+npm run build
+```
+
+The built files will be in the `build/client` directory.
+
+### Deployment
+
+This project is configured for automatic deployment to GitHub Pages using GitHub Actions.
+
+#### Automatic Deployment
+
+1. Push changes to the `master` branch
+2. GitHub Actions will automatically build and deploy the site
+3. The live site will be available at: https://raulzanardo.github.io/curriculo-react/
+
+#### Manual Deployment
+
+If you need to deploy manually:
+
+```bash
+# Build the project
+npm run build
+
+# Deploy using gh-pages (if configured)
+npm run deploy
+```
+
 ---
 
 ## Versão em Português
@@ -109,6 +146,66 @@ Pacotes Principais:
 Suporte a Plataformas:
 
 - Web (Chrome, Safari, Firefox, Edge)
+
+### Como Começar
+
+#### Pré-requisitos
+
+- Node.js 20 ou superior
+- npm ou yarn
+
+#### Instalação
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/raulzanardo/curriculo-react.git
+cd curriculo-react
+```
+
+2. Instale as dependências:
+
+```bash
+npm install
+```
+
+3. Inicie o servidor de desenvolvimento:
+
+```bash
+npm run dev
+```
+
+4. Abra [http://localhost:5173](http://localhost:5173) no seu navegador.
+
+#### Build para Produção
+
+```bash
+npm run build
+```
+
+Os arquivos construídos estarão no diretório `build/client`.
+
+### Implantação
+
+Este projeto está configurado para implantação automática no GitHub Pages usando GitHub Actions.
+
+#### Implantação Automática
+
+1. Faça push das alterações para a branch `master`
+2. O GitHub Actions irá automaticamente construir e implantar o site
+3. O site ao vivo estará disponível em: https://raulzanardo.github.io/curriculo-react/
+
+#### Implantação Manual
+
+Se precisar implantar manualmente:
+
+```bash
+# Construa o projeto
+npm run build
+
+# Implante usando gh-pages (se configurado)
+npm run deploy
+```
 
 ---
 
