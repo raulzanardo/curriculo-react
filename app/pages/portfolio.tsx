@@ -1,38 +1,57 @@
+import { Users, Heart, Cog } from "lucide-react";
+
 interface PortfolioTabProps {
   isDark: boolean;
+  language: "pt" | "en";
 }
 
-export default function PortfolioTab({ isDark }: PortfolioTabProps) {
-  const textColor = isDark ? "text-gray-100" : "text-gray-900";
-  const bgColor = isDark ? "bg-gray-800" : "bg-white";
-  const borderColor = isDark ? "border-gray-700" : "border-gray-200";
+export default function PortfolioTab({ isDark, language }: PortfolioTabProps) {
+  const textColor = isDark ? "text-text-primary-dark" : "text-text-primary";
+  const bgColor = isDark ? "bg-surface-dark" : "bg-surface";
+  const borderColor = isDark ? "border-surface-dark" : "border-surface";
 
   const projects = [
     {
       image: "assets/images/portfolio/myorbit_logo.png",
-      bgColor: isDark ? "#1e293b" : "#ffffff",
+      bgColor: isDark ? "#2a2a2a" : "#f5f5f5",
       title: "MyOrbit",
       description:
-        "Aplicativo focado na gestão de relacionamentos e organização de círculos sociais",
+        language === "pt"
+          ? "Aplicativo focado na gestão de relacionamentos e organização de círculos sociais"
+          : "Application focused on relationship management and social circle organization",
       url: "https://www.myorbit.chat",
+      icon: Users,
     },
     {
       image: "assets/images/portfolio/petplace_logo.png",
-      bgColor: isDark ? "#1e293b" : "#ffffff",
+      bgColor: isDark ? "#2a2a2a" : "#f5f5f5",
       title: "24Pet Shelter",
       description:
-        "Plataforma SaaS para gestão de abrigos e ONGs de proteção animal",
+        language === "pt"
+          ? "Plataforma SaaS para gestão de abrigos e ONGs de proteção animal"
+          : "SaaS platform for managing animal shelters and protection NGOs",
       url: "https://www.24pet.com/products/24petshelter",
+      icon: Heart,
     },
     {
       image: "assets/images/portfolio/copal_logo.png",
-      bgColor: isDark ? "#1e293b" : "#617e8b",
+      bgColor: "#617e8b",
       title: "CoPal",
       description:
-        "Aplicativo utilizado para parametrizar e controlar robôs de Paletização",
+        language === "pt"
+          ? "Aplicativo utilizado para parametrizar e controlar robôs de Paletização"
+          : "Application used to parameterize and control palletizing robots",
       url: "https://apps.apple.com/br/app/copal/id1660752505/",
+      icon: Cog,
     },
   ];
+
+  const getIconColor = (bgColor: string) => {
+    // For dark blue backgrounds, use white text for contrast
+    if (bgColor === "#617e8b") return "text-white";
+    // For other backgrounds, use theme-appropriate text color
+    return isDark ? "text-text-primary-dark" : "text-text-primary";
+  };
 
   return (
     <div className="space-y-6">
@@ -47,10 +66,13 @@ export default function PortfolioTab({ isDark }: PortfolioTabProps) {
               className="h-48 flex items-center justify-center p-4"
               style={{ backgroundColor: project.bgColor }}
             >
-              <div className="text-6xl">🎯</div>
+              <project.icon
+                size={64}
+                className={getIconColor(project.bgColor)}
+              />
             </div>
             <div className="p-4">
-              <h3 className={`text-lg font-bold ${textColor} mb-2`}>
+              <h3 className={`text-base font-bold ${textColor} mb-2`}>
                 {project.title}
               </h3>
               <p

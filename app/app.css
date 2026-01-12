@@ -1,13 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
+  --font-sans: "Roboto", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --color-primary: #ff9800; /* Orange */
+  --color-primary-dark: #bb86fc; /* Flutter Material 3 dark primary (purple) */
+  --color-surface: #fff8e1; /* Light orange tint */
+  --color-surface-dark: #1e1e1e; /* Flutter dark surface */
+  --color-background: #fff3e0; /* Light background */
+  --color-background-dark: #121212; /* Flutter dark background */
+  --color-text-primary: #000000; /* Black text for light mode */
+  --color-text-primary-dark: #ffffff; /* White text for dark mode */
+  --color-text-secondary: #666666; /* Gray text for light mode */
+  --color-text-secondary-dark: #cccccc; /* Light gray text for dark mode */
 }
 
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
+  @apply bg-background dark:bg-background-dark text-text-primary dark:text-text-primary-dark;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
