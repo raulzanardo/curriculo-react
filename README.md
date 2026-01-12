@@ -6,6 +6,31 @@ A modern, responsive web application showcasing my professional portfolio and re
 
 ---
 
+## Deployment
+
+This project is configured for automatic deployment to GitHub Pages.
+
+### Setup GitHub Pages
+
+1. Go to your repository settings
+2. Navigate to "Pages" in the left sidebar
+3. Under "Source", select "GitHub Actions"
+4. The workflow will automatically deploy your site when you push to the `main` branch
+
+### Manual Deployment
+
+If you need to deploy manually:
+
+```bash
+# Build the project
+npm run build
+
+# The built files will be in the build/client directory
+# These are automatically deployed by the GitHub Actions workflow
+```
+
+---
+
 ## Table of Contents
 
 - [English Version](#english-version)
