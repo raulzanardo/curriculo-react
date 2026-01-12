@@ -19,7 +19,7 @@ export default function PortfolioTab({ isDark, language }: PortfolioTabProps) {
 
   const projects = [
     {
-      image: "/myorbit_logo.png",
+      image: "/curriculo-react/myorbit_logo.png",
       bgColor: "#f5f5f5",
       title: "MyOrbit",
       description:
@@ -54,7 +54,7 @@ export default function PortfolioTab({ isDark, language }: PortfolioTabProps) {
       ],
     },
     {
-      image: "/petplace_logo.png",
+      image: "/curriculo-react/petplace_logo.png",
       bgColor: "#f5f5f5",
       title: "24Pet Shelter",
       description:
@@ -90,7 +90,7 @@ export default function PortfolioTab({ isDark, language }: PortfolioTabProps) {
       ],
     },
     {
-      image: "/copal_logo.png",
+      image: "/curriculo-react/copal_logo.png",
       bgColor: "#617e8b",
       title: "CoPal",
       description:

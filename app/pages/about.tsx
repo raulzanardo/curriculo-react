@@ -98,7 +98,10 @@ export default function AboutTab({
 
       {/* Photo */}
       <div className="mt-6 rounded-2xl overflow-hidden max-w-full">
-        <img src="/photo_about.png" className="w-full object-cover" />
+        <img
+          src="/curriculo-react/photo_about.png"
+          className="w-full object-cover"
+        />
       </div>
     </div>
   );

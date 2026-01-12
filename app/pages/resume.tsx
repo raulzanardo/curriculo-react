@@ -17,7 +17,7 @@ export default function ResumeTab({ isDark, language }: ResumeTabProps) {
         {/* Photo */}
         <div className="flex flex-col items-center md:items-start">
           <img
-            src="/photo.png"
+            src="/curriculo-react/photo.png"
             className="w-48 h-48 rounded-full object-cover"
           />
           <div className="mt-5 text-center md:text-left">
