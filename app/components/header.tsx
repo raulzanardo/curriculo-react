@@ -66,9 +66,9 @@ export default function Header({
               title="Alternar tema"
             >
               {isDark ? (
-                <Moon size={20} fill="currentColor" />
+                <Moon size={20} color="white" fill="white" />
               ) : (
-                <Sun size={20} fill="black" color="black" />
+                <Sun size={20} color="black" fill="black" />
               )}
             </button>
           </div>
