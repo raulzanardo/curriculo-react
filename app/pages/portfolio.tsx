@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Users, Heart, Cog, X, ExternalLink } from "lucide-react";
+import { X, ExternalLink } from "lucide-react";
 
 interface PortfolioTabProps {
   isDark: boolean;
