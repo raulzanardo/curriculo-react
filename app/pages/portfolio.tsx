@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { X, ExternalLink } from "lucide-react";
 
 interface PortfolioTabProps {
@@ -16,10 +16,28 @@ export default function PortfolioTab({ isDark, language }: PortfolioTabProps) {
   const [selectedProject, setSelectedProject] = useState<
     (typeof projects)[0] | null
   >(null);
+  const [carouselIndex, setCarouselIndex] = useState(0);
+
+  useEffect(() => {
+    setCarouselIndex(0);
+  }, [selectedProject]);
 
   const projects = [
     {
       image: "/curriculo-react/myorbit_logo.png",
+      prints: [
+        "/curriculo-react/portfolio/myorbit/feed_1.png",
+        "/curriculo-react/portfolio/myorbit/feed_2.png",
+        "/curriculo-react/portfolio/myorbit/orbit_1.png",
+        "/curriculo-react/portfolio/myorbit/orbit_2.png",
+        "/curriculo-react/portfolio/myorbit/orbits.png",
+        "/curriculo-react/portfolio/myorbit/post_1.png",
+        "/curriculo-react/portfolio/myorbit/profile_1.png",
+        "/curriculo-react/portfolio/myorbit/profile_2.png",
+        "/curriculo-react/portfolio/myorbit/share.png",
+        "/curriculo-react/portfolio/myorbit/sidebar.png",
+        "/curriculo-react/portfolio/myorbit/updates.png",
+      ],
       bgColor: "#f5f5f5",
       title: "MyOrbit",
       description:
@@ -91,6 +109,16 @@ export default function PortfolioTab({ isDark, language }: PortfolioTabProps) {
     },
     {
       image: "/curriculo-react/copal_logo.png",
+      prints: [
+        "/curriculo-react/portfolio/copal/1_Home.png",
+        "/curriculo-react/portfolio/copal/2_Menu.png",
+        "/curriculo-react/portfolio/copal/3_Pallet.png",
+        "/curriculo-react/portfolio/copal/4_Box.png",
+        "/curriculo-react/portfolio/copal/5_Pallet.png",
+        "/curriculo-react/portfolio/copal/6_Robot.png",
+        "/curriculo-react/portfolio/copal/7_Conversion.png",
+        "/curriculo-react/portfolio/copal/8_Settings.png",
+      ],
       bgColor: "#617e8b",
       title: "CoPal",
       description:
@@ -245,6 +273,57 @@ export default function PortfolioTab({ isDark, language }: PortfolioTabProps) {
                   ))}
                 </div>
               </div>
+
+              {/* Prints / Screenshots */}
+              {selectedProject.prints && selectedProject.prints.length > 0 && (
+                <div className="mb-6">
+                  <h3 className={`text-lg font-semibold mb-3 ${textColor}`}>
+                    {language === "pt" ? "Imagens" : "Screenshots"}
+                  </h3>
+
+                  <div className="relative mb-3">
+                    <button
+                      onClick={() =>
+                        setCarouselIndex((i) => Math.max(0, i - 1))
+                      }
+                      disabled={carouselIndex === 0}
+                      className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 px-2 py-1 rounded-full bg-white/80 hover:bg-white ${carouselIndex === 0 ? "opacity-40 cursor-not-allowed" : ""}`}
+                    >
+                      ◀
+                    </button>
+
+                    <div
+                      className={`w-full rounded overflow-hidden border ${modalBorderColor} flex items-center justify-center bg-black`}
+                    >
+                      <img
+                        src={selectedProject.prints[carouselIndex]}
+                        alt={`${selectedProject.title} screenshot ${carouselIndex + 1}`}
+                        className="w-full h-full object-contain cursor-pointer"
+                        onClick={() =>
+                          window.open(
+                            selectedProject.prints[carouselIndex],
+                            "_blank"
+                          )
+                        }
+                      />
+                    </div>
+
+                    <button
+                      onClick={() =>
+                        setCarouselIndex((i) =>
+                          Math.min(selectedProject.prints.length - 1, i + 1)
+                        )
+                      }
+                      disabled={
+                        carouselIndex === selectedProject.prints.length - 1
+                      }
+                      className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 px-2 py-1 rounded-full bg-white/80 hover:bg-white ${carouselIndex === selectedProject.prints.length - 1 ? "opacity-40 cursor-not-allowed" : ""}`}
+                    >
+                      ▶
+                    </button>
+                  </div>
+                </div>
+              )}
 
               {/* Visit Button */}
               <div className="flex justify-center">
