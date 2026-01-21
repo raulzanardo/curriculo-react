@@ -43,7 +43,7 @@ export default function ResumeTab({ isDark, language }: ResumeTabProps) {
           </p>
           <p className={`${subtleColor} leading-relaxed mt-3 text-justify`}>
             {language === "pt"
-              ? "Atuação em produtos SaaS e aplicativos em produção, participando ativamente de decisões técnicas, arquitetura e evolução de produto. Experiência em desenvolvimento full-stack, desde interfaces responsivas até APIs REST escaláveis com Node.js e NestJS. Background em automação industrial e eletrônica, trazendo visão sistêmica, confiabilidade e engenharia de alto nível para o desenvolvimento de software moderno."
+              ? "Atuação em produtos SaaS e aplicativos em produção, participando ativamente de decisões técnicas, arquitetura e evolução de produto. Experiência em desenvolvimento full-stack, desde interfaces responsivas até APIs REST escaláveis com Node.js e NestJS. Possui background em automação industrial e eletrônica, trazendo visão sistêmica, confiabilidade e engenharia de alto nível para o desenvolvimento de software moderno."
               : "Working on SaaS products and production applications, actively participating in technical decisions, architecture, and product evolution. Experience in full-stack development, from responsive interfaces to scalable REST APIs with Node.js and NestJS. Background in industrial automation and electronics, bringing systemic vision, reliability, and high-level engineering to modern software development."}
           </p>
           <p className={`${subtleColor} leading-relaxed mt-3 text-justify`}>
